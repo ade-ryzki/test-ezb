@@ -11,6 +11,8 @@ import ConfirmDialog from './components/UI/ConfirmDialog'
 
 const app =createApp(App)
 
+app.config.unwrapInjectedRef = true
+
 app.component('menu-button',MenuButton)
 app.component('title-page', TitlePage)
 app.component('th-table', ThTable)

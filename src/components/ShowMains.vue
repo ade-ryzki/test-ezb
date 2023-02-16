@@ -21,25 +21,15 @@
                 <td-table>
                     <blue-button>Update</blue-button>
                     <span class="mx-2"></span>
-                    <red-button>Delete</red-button>
+                    <red-button @click="deleteMain(main.name)">Delete</red-button>
                 </td-table>
             </tr>
         </tbody>
     </table>
-    <!-- alert notif -->
-    <confirm-dialog>
-        <template v-slot:title>Caution</template>
-        <template v-slot:message>Yakin data akan dihapus ?</template>
-        <template v-slot:button >
-            <blue-button>No</blue-button>
-            <span class="mx-2"></span>
-            <red-button>Yes</red-button>
-        </template>
-    </confirm-dialog>
 </template>
 
 <script>
 export default{
-    inject: ['mains']
+    inject: ['mains','deleteMain']
 }
 </script>
