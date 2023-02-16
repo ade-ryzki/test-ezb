@@ -19,13 +19,23 @@
                 <td-table>{{main.paket}}</td-table>
                 <td-table>{{main.service}}</td-table>
                 <td-table>
-                    <button class="bg-blue-300 px-3 py-1 rounded shadow  hover:bg-blue-500">Update</button>
+                    <blue-button>Update</blue-button>
                     <span class="mx-2"></span>
-                    <button class="bg-red-500 px-3 py-1 rounded shadow  hover:bg-red-700">Delete</button>
+                    <red-button>Delete</red-button>
                 </td-table>
             </tr>
         </tbody>
     </table>
+    <!-- alert notif -->
+    <confirm-dialog>
+        <template v-slot:title>Caution</template>
+        <template v-slot:message>Yakin data akan dihapus ?</template>
+        <template v-slot:button >
+            <blue-button>No</blue-button>
+            <span class="mx-2"></span>
+            <red-button>Yes</red-button>
+        </template>
+    </confirm-dialog>
 </template>
 
 <script>
