@@ -9,7 +9,9 @@
     </div>
   </header>
   <!-- body -->
-  <component :is="activePage"></component>
+  <div id="content" class="bg-blue-100">
+    <component :is="activePage"></component>
+  </div>
 </template>
 
 <script>
