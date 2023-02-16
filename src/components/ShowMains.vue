@@ -18,7 +18,11 @@
                 <td-table>{{ main.tujuan }}</td-table>
                 <td-table>{{main.paket}}</td-table>
                 <td-table>{{main.service}}</td-table>
-                <td-table>HAPUS</td-table>
+                <td-table>
+                    <button class="bg-blue-300 px-3 py-1 rounded shadow  hover:bg-blue-500">Update</button>
+                    <span class="mx-2"></span>
+                    <button class="bg-red-500 px-3 py-1 rounded shadow  hover:bg-red-700">Delete</button>
+                </td-table>
             </tr>
         </tbody>
     </table>
