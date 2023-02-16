@@ -30,23 +30,30 @@ export default{
       activePage: 'show-main',
       list: [
         {
+          npm: '132456',
           nama: 'ade ryzki',
-          jumlah:'2',
-          deskripsi: 'Tour Road To Bali',
-          service:'VIP TOUR'
+          program: 'VIP TOUR TRAVEL'
         },
         {
-          nama: 'tya',
-          jumlah:'4',
-          deskripsi: 'Tour Road To Borobudur',
-          service:'GOLD TOUR'
+          npm: '11223345',
+          nama: 'tiara geralldine',
+          program: 'VIP TOUR TRAVEL'
         },
         {
-          nama: 'Zhafran',
-          jumlah:'2',
-          deskripsi: 'Tour Road To Bintan',
-          service:'SILVER TOUR'
-        }
+          npm: '2211325',
+          nama: 'ade ryzki',
+          program: 'GOLD TOUR TRAVEL'
+        },
+        {
+          npm: '66532546',
+          nama: 'diyan',
+          program: 'SILVER TOUR TRAVEL'
+        },
+        {
+          npm: '4562542',
+          nama: 'heri',
+          program: 'GOLD TOUR TRAVEL'
+        },
       ]
     }
   },
