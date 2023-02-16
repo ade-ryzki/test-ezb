@@ -1,3 +1,3 @@
 <template>
-    <h3>Input Main</h3>
+    <title-page>Add</title-page>
 </template>
