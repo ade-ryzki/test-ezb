@@ -1,0 +1,31 @@
+<template>
+    <title-page>List Tour</title-page>
+    <table class="border border-collapse mx-auto">
+        <thead>
+            <tr>
+                <th-table>No</th-table>
+                <th-table>Nama</th-table>
+                <th-table>Tujuan</th-table>
+                <th-table>Paket</th-table>
+                <th-table>Service</th-table>
+                <th-table>Action</th-table>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(main, index) in mains" :key="main.name">
+                <td-table>{{index +1}}</td-table>
+                <td-table>{{main.name}}</td-table>
+                <td-table>{{ main.tujuan }}</td-table>
+                <td-table>{{main.paket}}</td-table>
+                <td-table>{{main.service}}</td-table>
+                <td-table>HAPUS</td-table>
+            </tr>
+        </tbody>
+    </table>
+</template>
+
+<script>
+export default{
+    inject: ['mains']
+}
+</script>

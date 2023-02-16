@@ -5,7 +5,7 @@
       EZB TOUR TEST
     </div>
     <div>
-      <menu-button @click="setActivePage('show-main')" :class="[activePage === 'show-main' ? 'text-black' : 'bg-red-500 text-white']">Main</menu-button>
+      <menu-button @click="setActivePage('show-mains')" :class="[activePage === 'show-mains' ? 'text-black' : 'bg-red-500 text-white']">Main</menu-button>
         <span class="mx-2"></span>
       <menu-button @click="setActivePage('input-main')" :class="[activePage === 'input-main' ? 'text-black' : 'bg-red-500 text-white']" >Add</menu-button>
     </div>
@@ -17,49 +17,48 @@
 </template>
 
 <script>
-import inputMain from './components/InputMain.vue'
-import showMain from './components/ShowMain.vue'
+import InputMain from './components/InputMain.vue'
+import ShowMains from './components/ShowMains.vue'
 
 export default{
   components: {
-    inputMain,
-    showMain
+    InputMain,
+    ShowMains
   },
   data(){
     return{
-      activePage: 'show-main',
-      list: [
+      activePage: 'show-mains',
+      mains: [
         {
-          npm: '132456',
-          nama: 'ade ryzki',
-          program: 'VIP TOUR TRAVEL'
+          name: 'ade ryzki',
+          tujuan: 'Bali',
+          paket: 'keluarga',
+          service: 'VIP TOUR TRAVEL'
         },
         {
-          npm: '11223345',
-          nama: 'tiara geralldine',
-          program: 'VIP TOUR TRAVEL'
+          name: 'siti masyita',
+          tujuan: 'bromo',
+          paket: 'keluarga',
+          service: 'VVIP TOUR TRAVEL'
         },
         {
-          npm: '2211325',
-          nama: 'ade ryzki',
-          program: 'GOLD TOUR TRAVEL'
+          name: 'nanda bima',
+          tujuan: 'Bali',
+          paket: 'keluarga',
+          service: 'GOLD TOUR TRAVEL'
         },
         {
-          npm: '66532546',
-          nama: 'diyan',
-          program: 'SILVER TOUR TRAVEL'
-        },
-        {
-          npm: '4562542',
-          nama: 'heri',
-          program: 'GOLD TOUR TRAVEL'
+          name: 'tiara',
+          tujuan: 'Bali',
+          paket: 'keluarga',
+          service: 'PLATINUM TOUR TRAVEL'
         },
       ]
     }
   },
   provide(){
     return{
-      main: this.main
+      mains: this.mains
     }
   },
   methods: {
