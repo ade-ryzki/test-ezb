@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(main, index) in mains" :key="main.name">
+            <tr class="odd:bg-gray-200 hover:bg-blue-100" v-for="(main, index) in mains" :key="main.name">
                 <td-table>{{index +1}}</td-table>
                 <td-table>{{main.name}}</td-table>
                 <td-table>{{ main.tujuan }}</td-table>

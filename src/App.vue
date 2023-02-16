@@ -30,28 +30,34 @@ export default{
       activePage: 'show-mains',
       mains: [
         {
-          name: 'ade ryzki',
+          name: 'Ade Ryzki',
           tujuan: 'Bali',
           paket: 'keluarga',
           service: 'VIP TOUR TRAVEL'
         },
         {
-          name: 'siti masyita',
+          name: 'Siti Masyita',
           tujuan: 'bromo',
           paket: 'keluarga',
           service: 'VVIP TOUR TRAVEL'
         },
         {
-          name: 'nanda bima',
+          name: 'Nanda Bima',
           tujuan: 'Bali',
           paket: 'keluarga',
           service: 'GOLD TOUR TRAVEL'
         },
         {
-          name: 'tiara',
+          name: 'Tiara Geralldine',
           tujuan: 'Bali',
           paket: 'keluarga',
           service: 'PLATINUM TOUR TRAVEL'
+        },
+        {
+          name: 'Tafa Al-Qarni',
+          tujuan: 'Bali',
+          paket: 'Private',
+          service: 'silver TOUR TRAVEL'
         },
       ]
     }
