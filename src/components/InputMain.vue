@@ -1,6 +1,6 @@
 <template>
     <title-page>Add</title-page>
-    <form class="border w-1/2 mx-auto p-3 rounded shadow">
+    <form @submit.prevent="submitMain" class="border w-1/2 mx-auto p-3 rounded shadow">
         <div class="mb-3">
             <label class="block my-1">Nama</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full">
@@ -50,4 +50,15 @@
         </div>
         <blue-button>Save</blue-button>
     </form>
+
 </template>
+
+<script>
+export default{
+    methods: {
+        submitMain(){
+            alert('submitted')
+        }
+    }
+}
+</script>
