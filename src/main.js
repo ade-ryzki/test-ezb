@@ -8,6 +8,7 @@ import TdTable from './components/UI/TdTable'
 import BlueButton from './components/UI/BlueButton.vue'
 import RedButton from './components/UI/RedButton.vue'
 import ConfirmDialog from './components/UI/ConfirmDialog'
+import WarningMessage from './components/UI/WarningMessage'
 
 const app =createApp(App)
 
@@ -20,4 +21,5 @@ app.component('td-table',TdTable)
 app.component('blue-button',BlueButton)
 app.component('red-button', RedButton)
 app.component('confirm-dialog',ConfirmDialog)
+app.component('warning-message', WarningMessage)
 app.mount('#app')
