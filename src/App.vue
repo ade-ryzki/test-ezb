@@ -30,6 +30,7 @@
 <script>
 import InputMain from './components/InputMain.vue'
 import ShowMains from './components/ShowMains.vue'
+import { computed } from 'vue'
 
 
 
@@ -79,7 +80,7 @@ export default{
   },
   provide(){
     return{
-      mains: this.mains,
+      mains: computed(()=> this.mains),
       deleteMain: this.deleteMain
     }
   },
@@ -90,6 +91,10 @@ export default{
     deleteMain(deletedName){
       this.isConfirmDialog = true
       this.deletedName = deletedName
+    },
+    deletingMain(){
+      this.mains = this.mains.filter(main => main.name !== this.deletedName)
+      this.isConfirmDialog = false
     },
     cancelDelete(){
       this.isConfirmDialog = false
