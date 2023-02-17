@@ -65,7 +65,7 @@ export default{
         },
         {
           name: 'Nanda Bima',
-          tujuan: 'Bali',
+          tujuan: 'Maladewa',
           paket: 'Family',
           tanggal: '15 march',
           harga: '3.000.000',
@@ -74,7 +74,7 @@ export default{
         },
         {
           name: 'Tiara Geralldine',
-          tujuan: 'Bali',
+          tujuan: 'Bintan',
           paket: 'Family',
           tanggal: '15 march',
           harga: '1.500.000',
@@ -83,7 +83,7 @@ export default{
         },
         {
           name: 'Tafa Al-Qarni',
-          tujuan: 'Bali',
+          tujuan: 'Yogyakarta',
           paket: 'Private',
           tanggal: '15 march',
           harga: '4.000.000',
