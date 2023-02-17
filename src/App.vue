@@ -91,6 +91,10 @@ export default{
       this.isConfirmDialog = true
       this.deletedName = deletedName
     },
+    cancelDelete(){
+      this.isConfirmDialog = false
+      this.deletedName = ''
+    }
   }
 }
 </script>
