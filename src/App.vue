@@ -20,9 +20,9 @@
         <template v-slot:title>Caution</template>
         <template v-slot:message>Yakin data akan dihapus ?</template>
         <template v-slot:button >
-            <blue-button @click="cancelDelete">No</blue-button>
-            <span class="mx-2"></span>
             <red-button @click="deletingMain">Yes</red-button>
+            <span class="mx-2"></span>
+            <blue-button @click="cancelDelete">No</blue-button>
         </template>
     </confirm-dialog>
 </template>
@@ -30,7 +30,8 @@
 <script>
 import InputMain from './components/InputMain.vue'
 import ShowMains from './components/ShowMains.vue'
-import { computed } from 'vue' 
+
+
 
 export default{
   components: {
@@ -78,7 +79,7 @@ export default{
   },
   provide(){
     return{
-      mains: computed(()=> this.mains),
+      mains: this.mains,
       deleteMain: this.deleteMain
     }
   },
@@ -88,16 +89,8 @@ export default{
     },
     deleteMain(deletedName){
       this.isConfirmDialog = true
-      this.deleteName = deletedName
+      this.deletedName = deletedName
     },
-    deletingMain(){
-      this.mains = this.mains.filter(main => main.name !== this.deletedName)
-      this.isConfirmDialog = false
-    },
-    cancelDelete(){
-      this.isConfirmDialog = false
-      this.deleteName = ''
-    }
   }
 }
 </script>

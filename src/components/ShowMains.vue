@@ -30,6 +30,6 @@
 
 <script>
 export default{
-    inject: ['mains','deleteMain']
+    inject: ['mains', 'deleteMain']
 }
 </script>
