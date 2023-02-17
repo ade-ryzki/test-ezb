@@ -7,7 +7,10 @@
                 <th-table>Nama</th-table>
                 <th-table>Tujuan</th-table>
                 <th-table>Paket</th-table>
+                <th-table>Tanggal</th-table>
+                <th-table>Harga</th-table>
                 <th-table>Service</th-table>
+                <th-table>Total</th-table>
                 <th-table>Action</th-table>
             </tr>
         </thead>
@@ -17,7 +20,10 @@
                 <td-table>{{main.name}}</td-table>
                 <td-table>{{ main.tujuan }}</td-table>
                 <td-table>{{main.paket}}</td-table>
+                <td-table>{{main.tanggal}}</td-table>
+                <td-table>{{main.harga}}</td-table>
                 <td-table>{{main.service}}</td-table>
+                <td-table>{{main.total}}</td-table>
                 <td-table>
                     <blue-button>Update</blue-button>
                     <span class="mx-2"></span>

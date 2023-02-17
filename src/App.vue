@@ -48,32 +48,47 @@ export default{
         {
           name: 'Ade Ryzki',
           tujuan: 'Bali',
-          paket: 'keluarga',
-          service: 'VIP TOUR TRAVEL'
+          paket: 'Family',
+          tanggal: '15 march',
+          harga: '2.000.000',
+          service: 'VIP TOUR TRAVEL',
+          total: '3',
         },
         {
           name: 'Siti Masyita',
           tujuan: 'bromo',
-          paket: 'keluarga',
-          service: 'VVIP TOUR TRAVEL'
+          paket: 'Family',
+          tanggal: '15 march',
+          harga: '1.800.000',
+          service: 'VVIP TOUR TRAVEL',
+          total: '2',
         },
         {
           name: 'Nanda Bima',
           tujuan: 'Bali',
-          paket: 'keluarga',
-          service: 'GOLD TOUR TRAVEL'
+          paket: 'Family',
+          tanggal: '15 march',
+          harga: '3.000.000',
+          service: 'GOLD TOUR TRAVEL',
+          total: '3',
         },
         {
           name: 'Tiara Geralldine',
           tujuan: 'Bali',
-          paket: 'keluarga',
-          service: 'PLATINUM TOUR TRAVEL'
+          paket: 'Family',
+          tanggal: '15 march',
+          harga: '1.500.000',
+          service: 'PLATINUM TOUR TRAVEL',
+          total: '5',
         },
         {
           name: 'Tafa Al-Qarni',
           tujuan: 'Bali',
           paket: 'Private',
-          service: 'silver TOUR TRAVEL'
+          tanggal: '15 march',
+          harga: '4.000.000',
+          service: 'silver TOUR TRAVEL',
+          total: '1',
         },
       ]
     }
