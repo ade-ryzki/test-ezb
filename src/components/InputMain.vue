@@ -4,7 +4,7 @@
         <div class="mb-3">
             <label class="block my-1">Nama</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="name">
-            <warning-message>Message</warning-message>
+            <warning-message v-if="isName">Message</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Tujuan</label>
@@ -15,22 +15,22 @@
                 <option value="Bintan">GOLD TOUR TRAVEL</option>
                 <option value="Yogyakarta">SILVER TOUR TRAVEL</option>
             </select>
-            <warning-message>Message</warning-message>
+            <warning-message v-if="isTujuan">Message</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Paket</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="paket">
-            <warning-message>Message</warning-message>
+            <warning-message v-if="isPaket">Message</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Tanggal</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="tanggal">
-            <warning-message>Message</warning-message>
+            <warning-message v-if="isTanggal">Message</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Harga</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="harga">
-            <warning-message>Message</warning-message>
+            <warning-message v-if="isHarga">Message</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Service</label>
@@ -41,12 +41,12 @@
                 <option value="GOLD TOUR TRAVEL">GOLD TOUR TRAVEL</option>
                 <option value="SILVER TOUR TRAVEL">SILVER TOUR TRAVEL</option>
             </select>
-            <warning-message>Message</warning-message>
+            <warning-message v-if="isService">Message</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Total</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="total">
-            <warning-message>Message</warning-message>
+            <warning-message v-if="isTotal">Message</warning-message>
         </div>
         <blue-button>Save</blue-button>
     </form>
@@ -63,12 +63,21 @@ export default{
             tanggal: '',
             harga: '',
             service: '',
-            total: ''
+            total: '',
+            isName: false,
+            isTujuan: false,
+            isPaket: false,
+            isTanggal: false,
+            isHarga: false,
+            isService: false,
+            isTotal: false
         }
     },
     methods: {
-        submitMain(){
-            alert('submitted')
+        submitMain() {
+            if (this.name.trim()) {
+                this.isName = true
+            }
         }
     }
 }
