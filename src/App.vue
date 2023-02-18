@@ -32,6 +32,7 @@
 <script>
 import InputMain from './components/InputMain.vue'
 import ShowMains from './components/ShowMains.vue'
+import UpdateMain from './components/UpdateMain.vue'
 import { computed } from 'vue'
 
 
@@ -39,7 +40,8 @@ import { computed } from 'vue'
 export default{
   components: {
     InputMain,
-    ShowMains
+    ShowMains,
+    UpdateMain
   },
   data(){
     return{
@@ -99,7 +101,8 @@ export default{
     return{
       mains: computed(()=> this.mains),
       deleteMain: this.deleteMain,
-      saveMain: this.saveMain
+      saveMain: this.saveMain,
+      updateMain: this.updateMain
     }
   },
   methods: {
@@ -129,6 +132,10 @@ export default{
         total: enteredTotal
       }
       this.mains.push(newMain)
+    },
+    updateMain(updateMain) {
+      this.activePage = 'update-main'
+      alert(updateMain.name)
     }
   }
 }

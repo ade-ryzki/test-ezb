@@ -1,5 +1,5 @@
 <template>
-    <title-page>Add</title-page>
+    <title-page>Update</title-page>
     <form @submit.prevent="submitMain" class="border w-1/2 mx-auto p-3 rounded shadow">
         <div class="mb-3">
             <label class="block my-1">Nama</label>

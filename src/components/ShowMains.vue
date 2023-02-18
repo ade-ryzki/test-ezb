@@ -25,7 +25,7 @@
                 <td-table>{{main.service}}</td-table>
                 <td-table>{{main.total}}</td-table>
                 <td-table>
-                    <blue-button>Update</blue-button>
+                    <blue-button @click="updateMain(main)">Update</blue-button>
                     <span class="mx-2"></span>
                     <red-button @click="deleteMain(main.name)">Delete</red-button>
                 </td-table>
@@ -36,6 +36,6 @@
 
 <script>
 export default{
-    inject: ['mains', 'deleteMain']
+    inject: ['mains', 'deleteMain', 'updateMain']
 }
 </script>
