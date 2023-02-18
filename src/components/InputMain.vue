@@ -4,7 +4,7 @@
         <div class="mb-3">
             <label class="block my-1">Nama</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="name">
-            <warning-message v-if="isName">Message</warning-message>
+            <warning-message v-if="isName">{{NameMessage}}</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Tujuan</label>
@@ -15,22 +15,22 @@
                 <option value="Bintan">GOLD TOUR TRAVEL</option>
                 <option value="Yogyakarta">SILVER TOUR TRAVEL</option>
             </select>
-            <warning-message v-if="isTujuan">Message</warning-message>
+            <warning-message v-if="isTujuan">{{TujuanMessage}}</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Paket</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="paket">
-            <warning-message v-if="isPaket">Message</warning-message>
+            <warning-message v-if="isPaket">{{PaketMessage}}</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Tanggal</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="tanggal">
-            <warning-message v-if="isTanggal">Message</warning-message>
+            <warning-message v-if="isTanggal">{{TanggalMessage}}</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Harga</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="harga">
-            <warning-message v-if="isHarga">Message</warning-message>
+            <warning-message v-if="isHarga">{{HargaMessage}}</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Service</label>
@@ -41,12 +41,12 @@
                 <option value="GOLD TOUR TRAVEL">GOLD TOUR TRAVEL</option>
                 <option value="SILVER TOUR TRAVEL">SILVER TOUR TRAVEL</option>
             </select>
-            <warning-message v-if="isService">Message</warning-message>
+            <warning-message v-if="isService">{{ServiceMessage}}</warning-message>
         </div>
         <div class="mb-3">
             <label class="block my-1">Total</label>
             <input type="text" class="border border-red-300 px-2 py-1 rounded shadow w-full" v-model="total">
-            <warning-message v-if="isTotal">Message</warning-message>
+            <warning-message v-if="isTotal">{{TotalMessage}}</warning-message>
         </div>
         <blue-button>Save</blue-button>
     </form>
@@ -70,13 +70,46 @@ export default{
             isTanggal: false,
             isHarga: false,
             isService: false,
-            isTotal: false
+            isTotal: false,
+            NameMessage: '',
+            TujuanMessage: '',
+            PaketMessage: '',
+            TanggalMessage: '',
+            HargaMessage: '',
+            ServiceMessage: '',
+            TotalMessage: '',
+
         }
     },
     methods: {
-        submitMain() {
-            if (this.name.trim()) {
+        submitMain(){
+            if (!this.name.trim()){
                 this.isName = true
+                this.NameMessage = "Name harus diisi."
+            }
+            if (!this.tujuan.trim()){
+                this.isTujuan = true
+                this.TujuanMessage = "Tujuan harus diisi."
+            }
+            if (!this.paket.trim()){
+                this.isPaket = true
+                this.PaketMessage = "Paket harus diisi."
+            }
+            if (!this.tanggal.trim()){
+                this.isTanggal = true
+                this.TanggalMessage = "Tanggal harus diisi."
+            }
+            if (!this.harga.trim()){
+                this.isHarga = true
+                this.HargaMessage = "Harga harus diisi."
+            }
+            if (!this.service.trim()){
+                this.isService = true
+                this.ServiceMessage = "Service harus diisi."
+            }
+            if (!this.total.trim()){
+                this.isTotal = true
+                this.TotalMessage = "Total harus diisi."
             }
         }
     }
