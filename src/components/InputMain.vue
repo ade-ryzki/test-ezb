@@ -46,7 +46,7 @@
         <div class="mb-3">
             <label class="block my-1">Total</label>
             <input type="text" :class="[isTotal ? 'border-red-300' : '']" class="px-2 py-1 rounded shadow w-full" v-model="total">
-            <warning-message v-if="isTotal">{{TotalMessage}}</warning-message>
+            <warning-message v-if="isTotal">{{ TotalMessage }}</warning-message>
         </div>
         <blue-button>Save</blue-button>
     </form>
@@ -54,7 +54,7 @@
     <telport to="body">
         <confirm-dialog v-if="isConfirmDialog">
             <template v-slot:title>Informasi</template>
-            <template v-slot:message>Nama {{ name }} sudah ada!</template>
+            <template v-slot:message>{{ message }}</template>
             <template v-slot:button>
                 <blue-button @click="closeConfirmDialog">Close</blue-button>
             </template>
@@ -67,7 +67,7 @@
 
 
 export default{
-    inject: ['mains'],
+    inject: ['mains', 'saveMain'],
     data(){
         return{
             name: '',
@@ -92,6 +92,7 @@ export default{
             HargaMessage: '',
             ServiceMessage: '',
             TotalMessage: '',
+            message: ''
 
         }
     },
@@ -143,6 +144,18 @@ export default{
                 var searchingMain = this.mains.find(main => main.name === this.name)
                 if (searchingMain) {
                     this.isConfirmDialog = true
+                    this.message = 'Nama ' +  this.name  + ' sudah ada!'
+                } else {
+                    this.saveMain(this.name, this.tujuan, this.paket, this.tanggal,this.harga, this.service, this.total)
+                    this.isConfirmDialog = true
+                    this.message = 'Add Success'
+                    this.name = ''
+                    this.tujuan = ''
+                    this.paket = ''
+                    this.tanggal = ''
+                    this.harga = ''
+                    this.service = ''
+                    this.total = ''
                 }
             }
         },

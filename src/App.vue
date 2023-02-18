@@ -13,7 +13,9 @@
 
   <!-- body -->
   <div id="content" class="container mx-auto py-2">
-    <component :is="activePage"></component>
+    <keep-alive>
+      <component :is="activePage"></component>
+    </keep-alive>
   </div>
   <!-- alert -->
   <confirm-dialog v-if="isConfirmDialog">
@@ -96,7 +98,8 @@ export default{
   provide(){
     return{
       mains: computed(()=> this.mains),
-      deleteMain: this.deleteMain
+      deleteMain: this.deleteMain,
+      saveMain: this.saveMain
     }
   },
   methods: {
@@ -114,6 +117,18 @@ export default{
     cancelDelete(){
       this.isConfirmDialog = false
       this.deletedName = ''
+    },
+    saveMain(enteredName, enteredTujuan, enteredPaket, enteredTanggal, enteredHarga, enteredService, enteredTotal){
+      const newMain = {
+        name: enteredName,
+        tujuan: enteredTujuan,
+        paket: enteredPaket,
+        tanggal: enteredTanggal,
+        harga: enteredHarga,
+        service: enteredService,
+        total: enteredTotal
+      }
+      this.mains.push(newMain)
     }
   }
 }
