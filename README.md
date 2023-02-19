@@ -12,7 +12,7 @@
 an example website about ordering or booking online tours at a company using the Vue Js framework and Tailwind CSS.
   
 ---
-[![Vercel Status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)]
+[![Vercel Status](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://)
 ## Getting Started
   
 ### Installation
