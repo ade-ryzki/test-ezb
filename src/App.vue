@@ -13,9 +13,9 @@
 
   <!-- body -->
   <div id="content" class="container mx-auto py-2">
-    <keep-alive>
+    <!-- <keep-alive> -->
       <component :is="activePage"></component>
-    </keep-alive>
+    <!-- </keep-alive> -->
   </div>
   <!-- alert -->
   <confirm-dialog v-if="isConfirmDialog">
@@ -48,6 +48,15 @@ export default{
       activePage: 'show-mains',
       isConfirmDialog: false,
       deletedName: '',
+      oldMain: {
+        name: '',
+        tujuan: '',
+        paket: '',
+        tanggal: '',
+        harga: '',
+        service: '',
+        total: ''
+      },
       mains: [
         {
           name: 'Ade Ryzki',
@@ -100,9 +109,11 @@ export default{
   provide(){
     return{
       mains: computed(()=> this.mains),
+      main: computed(()=> this.oldMain),
       deleteMain: this.deleteMain,
       saveMain: this.saveMain,
-      updateMain: this.updateMain
+      updateMain: this.updateMain,
+      updatedMain: this.updatedMain
     }
   },
   methods: {
@@ -135,7 +146,25 @@ export default{
     },
     updateMain(updateMain) {
       this.activePage = 'update-main'
-      alert(updateMain.name)
+      this.oldMain = {
+        name : updateMain.name,
+        tujuan : updateMain.tujuan,
+        paket : updateMain.paket,
+        tanggal : updateMain.tanggal,
+        harga : updateMain.harga,
+        service : updateMain.service,
+        total : updateMain.total,
+      }
+    },
+    updatedMain (name, updateTujuan, updatePaket, updateTanggal, updateHarga, updateService, updateTotal) {
+      var searchingMain =this.mains.find(main => main.name === name)
+
+      searchingMain.tujuan = updateTujuan
+      searchingMain.paket = updatePaket
+      searchingMain.tanggal = updateTanggal
+      searchingMain.harga = updateHarga
+      searchingMain.service = updateService
+      searchingMain.total = updateTotal
     }
   }
 }

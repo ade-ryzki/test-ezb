@@ -3,7 +3,7 @@
     <form @submit.prevent="submitMain" class="border w-1/2 mx-auto p-3 rounded shadow">
         <div class="mb-3">
             <label class="block my-1">Nama</label>
-            <input type="text" :class="[isName ? 'border-red-300' : '']" class="border px-2 py-1 rounded shadow w-full" v-model="name">
+            <input type="text" disabled :class="[isName ? 'border-red-300' : '']" class="border px-2 py-1 rounded shadow w-full" v-model="name">
             <warning-message v-if="isName">{{NameMessage}}</warning-message>
         </div>
         <div class="mb-3">
@@ -67,16 +67,16 @@
 
 
 export default{
-    inject: ['mains', 'saveMain'],
+    inject: ['main', 'updatedMain'],
     data(){
         return{
-            name: '',
-            tujuan: '',
-            paket: '',
-            tanggal: '',
-            harga: '',
-            service: '',
-            total: '',
+            name: this.main.name,
+            tujuan: this.main.tujuan,
+            paket: this.main.paket,
+            tanggal: this.main.tanggal,
+            harga: this.main.harga,
+            service: this.main.service,
+            total: this.main.total,
             isConfirmDialog: false,
             isName: false,
             isTujuan: false,
@@ -141,22 +141,9 @@ export default{
                 this.isTotal = false
             }
             if(!this.isName && !this.isTujuan && !this.isPaket && !this.isTanggal && !this.isHarga && !this.isService && !this.isTotal) {
-                var searchingMain = this.mains.find(main => main.name === this.name)
-                if (searchingMain) {
+                    this.updatedMain(this.name, this.tujuan, this.paket, this.tanggal,this.harga, this.service, this.total)
                     this.isConfirmDialog = true
-                    this.message = 'Nama ' +  this.name  + ' sudah ada!'
-                } else {
-                    this.saveMain(this.name, this.tujuan, this.paket, this.tanggal,this.harga, this.service, this.total)
-                    this.isConfirmDialog = true
-                    this.message = 'Add Success'
-                    this.name = ''
-                    this.tujuan = ''
-                    this.paket = ''
-                    this.tanggal = ''
-                    this.harga = ''
-                    this.service = ''
-                    this.total = ''
-                }
+                    this.message = 'Update Success'
             }
         },
         closeConfirmDialog() {
