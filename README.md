@@ -1,4 +1,4 @@
-# VUE JS  [![VUE(https://awesome.re/badge-flat2.svg)](https://)
+# VUE JS  [![TICKITZ](https://awesome.re/badge-flat2.svg)](https://)
 <h3 align="center">
 
 ![](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=header)
